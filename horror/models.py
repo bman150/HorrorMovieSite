@@ -17,8 +17,8 @@ class HorrorSubGenre(models.Model):
 # Movie describes the movie title, year of release, subgenre name, director and summary of the movie.
 class Movie(models.Model):
     movietitle=models.CharField(max_length=255)# title of the movie
-    horrorsubgenre=models.Foreignkey(HorrorSubGenre, on_delete=models.DO_NOTHING)# subgenrea of the movie
-    user=models.Foreignkey(User, on_delete=models.DO_NOTHING)# user who posts the movie information
+    horrorsubgenre=models.ForeignKey(HorrorSubGenre, on_delete=models.DO_NOTHING)# subgenrea of the movie
+    user=models.ForeignKey(User, on_delete=models.DO_NOTHING)# user who posts the movie information
     moviereleasedate=models.DateField()# release date of the movie
     moviedirector=models.CharField(max_length=255)# director of the movie
     moviedescription=models.TextField(null=True, blank=True) # summary about the movie
