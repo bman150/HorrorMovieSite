@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Horror Movie Sub-Genres</h1>
+<table class="table">
+    <tr>
+        <th>Horror Sub-Genre</th>
+        <th>Description</th>
+    </tr>
+    {% for g in genre_list %}
+        <tr>
+            <td>{{g.genrename}}</td>
+            <td>{{g.genredescription}}</td>
+        </tr>
+        
+    {% endfor %}
+    
+</table>
+
+{% endblock %}

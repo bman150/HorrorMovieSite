@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Horror Movie List</h1>
+<table class="table">
+    <tr>
+        <th>Title</th>
+        <th>Sub-Genre</th>
+        <th>Last Edit By</th>
+        <th>Release Date</th>
+        <th>Director</th>
+        <th>Description</th>
+    </tr>
+    {% for m in movie_list %}
+        <tr>
+            <td>{{m.movietitle}}</td>
+            <td>{{m.horrorsubgenre}}</td>
+            <td>{{m.user}}</td>
+            <td>{{m.moviereleasedate}}</td>
+            <td>{{m.moviedirector}}</td>
+            <td>{{m.moviedescription}}</td>
+        </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}
