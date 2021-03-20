@@ -7,11 +7,11 @@ def index(request):
     return render(request, 'horror/index.html') 
 
 # Retrieves all the horror sub-genres.
-def getgenres(request):
+def genres(request):
     genre_list=HorrorSubGenre.objects.all() 
     return render(request, 'horror/genres.html', {'genre_list' : genre_list})
 
 # Retrieves all the horror movies
-def getmovies(request):
+def movies(request):
     movie_list=Movie.objects.all()
     return render(request, 'horror/movies.html', {'movie_list' : movie_list})
