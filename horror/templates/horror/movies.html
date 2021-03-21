@@ -4,20 +4,10 @@
 <table class="table">
     <tr>
         <th>Title</th>
-        <th>Sub-Genre</th>
-        <th>Last Edit By</th>
-        <th>Release Date</th>
-        <th>Director</th>
-        <th>Description</th>
     </tr>
     {% for m in movie_list %}
         <tr>
             <td><a href="{% url 'moviedetail' id=m.id %}">{{m.movietitle}}</a></td>
-            <td>{{m.horrorsubgenre}}</td>
-            <td>{{m.user}}</td>
-            <td>{{m.moviereleasedate}}</td>
-            <td>{{m.moviedirector}}</td>
-            <td>{{m.moviedescription}}</td>
         </tr>
     {% endfor %}
 
