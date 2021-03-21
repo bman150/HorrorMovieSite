@@ -15,3 +15,7 @@ def genres(request):
 def movies(request):
     movie_list=Movie.objects.all()
     return render(request, 'horror/movies.html', {'movie_list' : movie_list})
+
+# Detail view for horror movie sub-genres
+def genreDetail(request, id):
+    horrorsubgen=get_object_or_404(HorrorSubGenre, pk=id)
