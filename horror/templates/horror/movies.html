@@ -12,7 +12,7 @@
     </tr>
     {% for m in movie_list %}
         <tr>
-            <td>{{m.movietitle}}</td>
+            <td><a href="{% url 'moviedetail' id=m.id %}">{{m.movietitle}}</a></td>
             <td>{{m.horrorsubgenre}}</td>
             <td>{{m.user}}</td>
             <td>{{m.moviereleasedate}}</td>

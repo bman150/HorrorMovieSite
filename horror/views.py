@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import HorrorSubGenre, Movie
 
 # Create your views here.
@@ -17,9 +17,9 @@ def movies(request):
     return render(request, 'horror/movies.html', {'movie_list' : movie_list})
 
 # Detail view for horror movie sub-genres
-def movieDetail(request, id):
+def moviedetail(request, id):
     horrormovie=get_object_or_404(Movie, pk=id)
     context={
         'horrormovie' : horrormovie,
     }
-    return render(request, 'horror/movieDetail.html', context=context)
+    return render(request, 'horror/moviedetail.html', context=context)
