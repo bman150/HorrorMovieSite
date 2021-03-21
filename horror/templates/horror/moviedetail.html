@@ -1,5 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
+<h1>{{ horrormovie.movietitle }}</h1>
+<table class="table">
+    <tr>
+        <th>Sub-Genre</th>
+        <th>Last Edit By</th>
+        <th>Release Date</th>
+        <th>Director</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>{{ horrormovie.horrorsubgenre }}</td>
+        <td>{{ horrormovie.user }}</td>
+        <td>{{ horrormovie.moviereleasedate }}</td>
+        <td>{{ horrormovie.moviedirector }}</td>
+        <td>{{ horrormovie.moviedescription }}</td>
+    </tr>
+</table>
+
 <h2>{{ horrormovie.movietitle }}</h2>
 <p>Sub-Genre: {{ horrormovie.horrorsubgenre }}</p>
 <p>Last edited by: {{ horrormovie.user }}</p>
