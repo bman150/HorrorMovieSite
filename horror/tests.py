@@ -8,3 +8,6 @@ class HorrorSubGenreTest(TestCase):
 
     def test_typestring(self):
         self.assertEqual(str(self.genre), 'Haunted House')
+
+    def text_tablename(self):
+        self.assertEqual(str(HorrorSubGenre._meta.db.table), 'horrorsubgenre')
