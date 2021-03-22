@@ -1,5 +1,6 @@
 from django.test import TestCase
 from .models import HorrorSubGenre, Movie
+from .forms import HorrorSubGenreForm, MovieForm
 
 # Create your tests here.
 class HorrorSubGenreTest(TestCase):
@@ -12,6 +13,7 @@ class HorrorSubGenreTest(TestCase):
     def test_tablename(self):
         self.assertEqual(str(HorrorSubGenre._meta.db_table), 'horrorsubgenre')
 
+# missing some test cases (see my notes)
 class MovieTest(TestCase):
     def setUp(self):
         self.title=Movie(movietitle='The Hills Have Eyes')
@@ -21,3 +23,10 @@ class MovieTest(TestCase):
 
     def test_tablename(self):
         self.assertEqual(str(Movie._meta.db_table), 'movie')
+
+# Form tests
+class HorrorSubGenre_Form_Test(TestCase):
+    def test_typeform_is_valid(self):
+        form=HorrorSubGenreForm(data={'genrename': "genre1", 'genredescription' : "some genre"})
+        self.assertTrue(form.is_valid())
+# missing a test for MovieForm (see my notes)
