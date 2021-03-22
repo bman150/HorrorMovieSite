@@ -30,3 +30,5 @@ class HorrorSubGenre_Form_Test(TestCase):
         form=HorrorSubGenreForm(data={'genrename': "genre1", 'genredescription' : "some genre"})
         self.assertTrue(form.is_valid())
 # missing a test for MovieForm (see my notes)
+
+# Authenticated users test (see assignment 9)
