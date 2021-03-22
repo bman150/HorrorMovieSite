@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import HorrorSubGenre, Movie
 from .forms import HorrorSubGenreForm, MovieForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 # Return index for horror app.
@@ -26,6 +27,7 @@ def moviedetail(request, id):
     return render(request, 'horror/moviedetail.html', context=context)
 
 # Create form functions here.
+@login_required
 def newHorrorSubGenre(request):
     form=HorrorSubGenreForm
     if request.method=='POST':
@@ -38,6 +40,7 @@ def newHorrorSubGenre(request):
         form=HorrorSubGenreForm()
     return render(request, 'horror/newhorrorsubgenre.html', {'form': form})
 
+@login_required
 def newMovie(request):
     form=MovieForm
     if request.method=='POST':
@@ -49,3 +52,10 @@ def newMovie(request):
     else:
         form=MovieForm()
     return render(request, 'horror/newmovie.html', {'form': form})
+
+# login and logout views
+def loginmessage(request):
+    return render(request, 'horror/loginmessage.html')
+
+def logoutmessage(request):
+    return render(request, 'horror/logoutmessage.html')

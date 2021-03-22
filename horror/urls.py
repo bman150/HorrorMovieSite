@@ -8,4 +8,6 @@ urlpatterns = [
     path('moviedetail/<int:id>', views.moviedetail, name='moviedetail'),
     path('newHorrorSubGenre/', views.newHorrorSubGenre, name='newhorrorsubgenre'),
     path('newMovie/', views.newMovie, name='newmovie'),
+    path('loginmessage/', views.loginmessage, name='loginmessage'),
+    path('logoutmessage/', views.logoutmessage, name='logoutmessage'),
 ]
