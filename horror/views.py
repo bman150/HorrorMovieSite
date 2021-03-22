@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import HorrorSubGenre, Movie
+from .forms import HorrorSubGenreForm, MovieForm
 
 # Create your views here.
 # Return index for horror app.
@@ -23,3 +24,28 @@ def moviedetail(request, id):
         'horrormovie' : horrormovie,
     }
     return render(request, 'horror/moviedetail.html', context=context)
+
+# Create form functions here.
+def newHorrorSubGenre(request):
+    form=HorrorSubGenreForm
+    if request.method=='POST':
+        form=HorrorSubGenreForm(request.POST)
+        if form.is_valid():
+            post=form.save(commit=True)
+            post.save()
+            form=HorrorSubGenreForm
+    else:
+        form=HorrorSubGenreForm()
+    return render(request, 'horror/newhorrorsubgenre.html', {'form': form})
+
+def newMovie(request):
+    form=MovieForm
+    if request.method=='POST':
+        form=MovieForm(request.POST)
+        if form.is_valid():
+            post=form.save(commit=True)
+            post.save()
+            form=MovieForm
+    else:
+        form=MovieForm()
+    return render(request, 'horror/newmovie.html', {'form': form})

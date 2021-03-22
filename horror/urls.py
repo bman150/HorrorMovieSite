@@ -6,4 +6,6 @@ urlpatterns = [
     path('genres/', views.genres, name='genres'),
     path('movies/', views.movies, name='movies'),
     path('moviedetail/<int:id>', views.moviedetail, name='moviedetail'),
+    path('newHorrorSubGenre/', views.newHorrorSubGenre, name='newhorrorsubgenre'),
+    path('newMovie/', views.newMovie, name='newmovie'),
 ]
