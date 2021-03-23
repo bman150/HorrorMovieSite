@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 # HorrorSubGenre describes the subgenre name and a summary about it.
 class HorrorSubGenre(models.Model):
     genrename=models.CharField(max_length=255)# name of horror subgenre
-    genredescription=models.TextField(null=True, blank=True)# description of horror subgenre
+    genredescription=models.TextField()# description of horror subgenre
 
     # __str__ (toString method)
     def __str__(self):
@@ -21,7 +21,7 @@ class Movie(models.Model):
     user=models.ForeignKey(User, on_delete=models.DO_NOTHING)# user who posts the movie information
     moviereleasedate=models.DateField()# release date of the movie
     moviedirector=models.CharField(max_length=255)# director of the movie
-    moviedescription=models.TextField(null=True, blank=True) # summary about the movie
+    moviedescription=models.TextField() # summary about the movie
 
     def __str__(self):
         return self.movietitle
